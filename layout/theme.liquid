@@ -63,25 +63,23 @@
   <!--[if (gt IE 9)|!(IE)]><!--><script src="{{ 'theme.js' | asset_url }}" defer="defer"></script><!--<![endif]-->
   <!--[if lte IE 9]><script src="{{ 'theme.js' | asset_url }}"></script><![endif]-->
   <!-- Bootstrap Core CSS -->
-  <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  {{ '//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css' | stylesheet_tag }}
 
   <!-- Custom Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Dancing+Script:400,700" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Muli" rel="stylesheet">
+  {{ '//fonts.googleapis.com/css?family=Lato:100,300,400,700,400italic,700italic' | stylesheet_tag }}
+  {{ '//fonts.googleapis.com/css?family=Dancing+Script:400,700' | stylesheet_tag }}
 
   <!-- Owl Stylesheets -->
   <link rel="stylesheet" href="assets/owlcarousel/assets/owl.carousel.min.css">
   <link rel="stylesheet" href="assets/owlcarousel/assets/owl.theme.default.min.css">
 
   <!-- Plugin CSS -->
-  <link rel="stylesheet" href="lib/font-awesome/css/font-awesome.min.css">
+  {{ '//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css' | stylesheet_tag }}
   <link rel="stylesheet" href="lib/simple-line-icons/css/simple-line-icons.css">
   <link rel="stylesheet" href="lib/device-mockups/device-mockups.min.css">
 
   <!-- Theme CSS -->
-  <link href="css/resto.css" rel="stylesheet">
+  {{ 'resto.css' | asset_url | stylesheet_tag }}
 
   <!-- javascript -->
   <script src="assets/vendors/jquery.min.js"></script>
