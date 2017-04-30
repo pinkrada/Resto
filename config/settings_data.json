@@ -37,9 +37,9 @@
          },
          "about":{
             "type":"about",
-            "settings":{
-               "text_size":"large"
-            }
+         },
+         "newsletter":{
+            "type":"text",
          },
          "featured-collections":{
             "type":"collection",
@@ -63,6 +63,7 @@
       "content_for_index":[
          "hero",
          "about",
+          "newsletter",
          "featured-collections",
          "feature-row",
          "slideshow"
@@ -106,10 +107,10 @@
                }
             },
             "about":{
-               "type":"about",
-               "settings":{
-                  "text_size":"large"
-               }
+               "type":"text",
+            },
+            "newsletter":{
+               "type":"text",
             },
             "featured-collections":{
                "type":"collection",
@@ -133,6 +134,7 @@
          "content_for_index":[
             "hero",
             "about",
+            "newsletter",
             "featured-collections",
             "feature-row",
             "slideshow"
