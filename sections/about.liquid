@@ -7,7 +7,7 @@
         </div>
         <div class="col-md-5 col-sm-5">
           <div class="caption-first">
-            <!-- <h3>{{section.settings.first_snippet_title}}</h3> -->
+            <h3>{{section.settings.first_snippet_title}}</h3>
             <p>Experience menu choices that reveal the character of Philippines, region by region, prepared with only the freshest ingredients by our highly skilled culinary team.</p>
           </div>
         </div>
@@ -15,7 +15,7 @@
       <div class="box">
         <div class="col-md-5 col-sm-5">
           <div class="caption-first">
-            <!-- <h3>{{section.settings.second_snippet_title}}</h3> -->
+            <h3>{{section.settings.second_snippet_title}}</h3>
             <p>It’s not just about first rate cuisine and an award winning wine list. Our highly trained and exceedingly personable staff are there to help you navigate our selections and ensure a memorable dining experience.</p>
           </div>
         </div>
@@ -30,35 +30,19 @@
 
 {% schema %}
 {
-	"name": "Hero",
+	"name": "About Snippet",
 	"settings": [
     {
   		"type": "text",
-  		"id": "hero_tag",
-  		"label": "Tagline",
-      "default": "Featuring our latest book : "
+  		"id": "first_snippet_title",
+  		"label": "First row title",
+      "default": "Modern Filipino Style"
 	  },
     {
   		"type": "text",
-  		"id": "hero_first_label",
-  		"label": "First Button Label",
-      "default": "Learn More"
-	  },
-    {
-  		"type": "url",
-  		"id": "hero_first_url",
-  		"label": "First Button URL"
-	  },
-    {
-  		"type": "text",
-  		"id": "hero_second_label",
-  		"label": "Second Button Label",
-      "default": "Learn More"
-	  },
-    {
-  		"type": "url",
-  		"id": "hero_second_url",
-  		"label": "Second Button URL"
+  		"id": "second_snippet_title",
+  		"label": "Second row title",
+      "default": "Great Service!"
 	  },
     {
       "type": "image_picker",
