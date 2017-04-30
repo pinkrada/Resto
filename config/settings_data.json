@@ -44,18 +44,6 @@
          "newsletter":{
             "type":"newsletter"
          },
-         "featured-collections":{
-            "type":"collection",
-            "settings":{
-               "collection":"frontpage"
-            }
-         },
-         "feature-row":{
-            "type":"feature-row",
-            "settings":{
-
-            }
-         },
          "footer":{
             "type":"footer",
             "settings":{
@@ -67,10 +55,7 @@
          "hero",
          "about",
           "newsletter",
-          "featured-home",
-         "featured-collections",
-         "feature-row",
-         "slideshow"
+          "featured-home"
       ]
    },
    "presets":{
@@ -119,18 +104,7 @@
             "newsletter":{
                "type":"newsletter"
             },
-            "featured-collections":{
-               "type":"collection",
-               "settings":{
-                  "collection":"frontpage"
-               }
-            },
-            "feature-row":{
-               "type":"feature-row",
-               "settings":{
 
-               }
-            },
             "footer":{
                "type":"footer",
                "settings":{
@@ -142,11 +116,7 @@
             "hero",
             "about",
             "newsletter",
-            "featured-home",
-            "featured-collections",
-            "feature-row",
-            "slideshow"
-
+            "featured-home"
          ]
       }
    }
