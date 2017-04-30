@@ -30,7 +30,28 @@
   <meta name="description" content="{{ page_description | escape }}">
   {% endif %}
 
-  <!-- {% include 'social-meta-tags' %} -->
+  {% include 'social-meta-tags' %}
+<!--
+  {{ 'theme.scss.css' | asset_url | stylesheet_tag }}
+  {% include 'google-fonts' %}
+
+  <script>
+  var theme = {
+    strings: {
+      addToCart: {{ 'products.product.add_to_cart' | t | json }},
+      soldOut: {{ 'products.product.sold_out' | t | json }},
+      unavailable: {{ 'products.product.unavailable' | t | json }},
+      showMore: {{ 'general.filters.show_more' | t | json }},
+      showLess: {{ 'general.filters.show_less' | t | json }}
+    },
+    moneyFormat: {{ shop.money_format | json }}
+  }
+
+  document.documentElement.className = document.documentElement.className.replace('no-js', 'js');
+  </script>
+-->
+
+  {{ '//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css' | stylesheet_tag }}
 
   {{ '//fonts.googleapis.com/css?family=Lato:100,300,400,700,400italic,700italic' | stylesheet_tag }}
   {{ '//fonts.googleapis.com/css?family=Dancing+Script:400,700' | stylesheet_tag }}
