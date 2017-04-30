@@ -170,7 +170,7 @@ background-size: cover;
   width: 100%;
   min-height: auto;
   overflow-y: hidden;
-  background: url("../img/resto-front.jpg"), #7b4397;
+  background: url("img/resto-front.jpg"), #7b4397;
   /* fallback for old browsers */
   /*background: url("../img/resto-front.jpg"), -webkit-linear-gradient(to left, #7b4397, #dc2430);*/
   /* Chrome 10-25, Safari 5.1-6 */
@@ -270,7 +270,7 @@ header .device-container .screen img {
 }
 .inner-page-section{
   padding: 50px;
-  background-image: url("../img/wood.jpg");
+  background-image: url("img/wood.jpg");
 }
 .inner-page-section img{
   max-width: 700px;
@@ -352,7 +352,7 @@ margin-top: -183px;
 }
 .board {
   margin-top: -100px;
-  background-image: url(../img/chalk.jpg);
+  background-image: url(img/chalk.jpg);
   height: 550px;
   box-shadow: 0px 0px 4px 3px rgba(0, 0, 0, 0.31);
   text-align: center;
@@ -365,7 +365,7 @@ margin-top: -183px;
 }
 section.newsletter{
   padding: 170px 0px 125px;
-  background-image: url("../img/bbq.png");
+  background-image: url("img/bbq.png");
   background-size:cover;
   background-repeat: no-repeat;
   margin-top: -100px;
@@ -525,7 +525,7 @@ section.cta {
   -o-background-size: cover;
   background-position: 0% -100px;
   background-repeat: no-repeat;
-  background-image: url('../img/3.jpg');
+  background-image: url('img/3.jpg');
   padding: 250px 0;
   height: 300px;
   background-attachment: fixed;
