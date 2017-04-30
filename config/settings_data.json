@@ -114,8 +114,8 @@
       },
       "content_for_index":[
         "hero",
-        "newsletter",
         "about",
+        "newsletter",
         "featured-home"
       ]
     }
