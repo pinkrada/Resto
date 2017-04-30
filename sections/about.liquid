@@ -20,7 +20,7 @@
           </div>
         </div>
         <div class="col-md-7 col-sm-7">
-          <img src='{{section.settings.image | img_url: '537px' }}' alt="{{ shop.name }}" class="img-responsive second-food">
+          <img src='{{section.settings.image | img_url: '537x' }}' alt="{{ shop.name }}" class="img-responsive second-food">
         </div>
       </div>
     </div>
@@ -47,8 +47,7 @@
     {
       "type": "image_picker",
       "id": "image",
-      "label": "Image",
-      "default": {{ '2.jpg' | asset_url }}
+      "label": "Image"
     }
   ]
 }
