@@ -124,6 +124,134 @@ document.documentElement.className = document.documentElement.className.replace(
     </div>
   </header>
 
+  <section id="download" class="download bg-primary text-center">
+    <div class="container">
+      <div class="col-md-10 col-md-offset-1 slider">
+        <div class="box">
+          <div class="col-md-7 col-sm-7">
+            <img src="{{ '1.jpg' | asset_url }}" alt="{{ shop.name }}" class="img-responsive">
+          </div>
+          <div class="col-md-5 col-sm-5">
+            <div class="caption-first">
+              <h3> Modern Filipino Style </h3>
+              <p>Experience menu choices that reveal the character of Philippines, region by region, prepared with only the freshest ingredients by our highly skilled culinary team.</p>
+            </div>
+          </div>
+        </div>
+        <div class="box">
+          <div class="col-md-5 col-sm-5">
+            <div class="caption-first">
+              <h3> Great Service! </h3>
+              <p>It’s not just about first rate cuisine and an award winning wine list. Our highly trained and exceedingly personable staff are there to help you navigate our selections and ensure a memorable dining experience.</p>
+            </div>
+          </div>
+          <div class="col-md-7 col-sm-7">
+            <img src="{{ '2.jpg' | asset_url }}" alt="{{ shop.name }}" class="img-responsive second-food">
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <section class="cta" id="specialties">
+    <div class="parallax-layer parallax-layer-base">
+      <div class="cta-content ">
+        <div class="container text-center">
+          <h2>Our Menus</h2>
+        </div>
+      </div>
+      <div class="overlay"></div>
+    </div>
+  </section>
+
+  <section id="ourmenu" class="ourmenu bg-primary">
+    <div class="container">
+      <div class="col-md-10 col-md-offset-1 board">
+        <!-- <h3 class="text-center">-Our Menu-</h3> -->
+        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.<br> Lorem ipsum has been the ipsum has been the ipsum has been the</p>
+        <div class="owl-carousel owl-theme">
+          <div class="item">
+            <img src="{{ 'food-3.png' | asset_url }}" alt="{{ shop.name }}" class="img-responsive center-block">
+            <h4>Chicken Wings</h4>
+            <span class="price">P150.00</span>
+            <hr>
+          </div>
+          <div class="item">
+
+            <img src="{{ 'steak.png' | asset_url }}" alt="{{ shop.name }}" class="img-responsive center-block">
+            <h4>Steak</h4>
+            <span class="price">P150.00</span>
+            <hr>
+          </div>
+          <div class="item">
+            <img src="{{ 'food-3.png' | asset_url }}" alt="{{ shop.name }}" class="img-responsive center-block">
+            <h4>Chicken Wings</h4>
+            <span class="price">P150.00</span>
+            <hr>
+          </div>
+          <div class="item">
+            <img src="{{ 'food-3.png' | asset_url }}" alt="{{ shop.name }}" class="img-responsive center-block">
+            <h4>Chicken Wings</h4>
+            <span class="price">P150.00</span>
+            <hr>
+          </div>
+          <div class="item">
+            <img src="{{ 'food-3.png' | asset_url }}" alt="{{ shop.name }}" class="img-responsive center-block">
+            <h4>Chicken Wings</h4>
+            <span class="price">P150.00</span>
+            <hr>
+          </div>
+          <div class="item">
+            <img src="{{ 'food-1.png' | asset_url }}" alt="{{ shop.name }}" class="img-responsive center-block">
+            <h4>Chicken Wings</h4>
+            <span class="price">P150.00</span>
+            <hr>
+          </div>
+          <div class="item">
+            <img src="{{ 'food-3.png' | asset_url }}" alt="{{ shop.name }}" class="img-responsive center-block">
+            <h4>Chicken Wings</h4>
+            <span class="price">P150.00</span>
+            <hr>
+          </div>
+          <div class="item">
+            <img src="{{ 'food-3.png' | asset_url }}" alt="{{ shop.name }}" class="img-responsive center-block">
+            <h4>Chicken Wings</h4>
+            <span class="price">P150.00</span>
+            <hr>
+          </div>
+          <div class="item">
+            <img src="{{ 'food-1.png' | asset_url }}" alt="{{ shop.name }}" class="img-responsive center-block">
+            <h4>Chicken Wings</h4>
+            <span class="price">P150.00</span>
+            <hr>
+          </div>
+        </div>
+
+        <a id="find-button" href="#about" class="btn btn-outline btn-xl page-scroll sr-button">View Full Menu</a>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="newsletter" id="newsletter">
+    <div class="container ">
+      <div class="row">
+        <div class="col-md-12 text-center">
+          <h2 class="section-heading">Stay in touch with updates</h2>
+
+          <form id="register-newsletter">
+            <input type="text" name="newsletter" required="" placeholder="Enter your email address">
+            <input type="submit" class="btn btn-custom-3" value="SIGN UP">
+          </form>
+        </div>
+
+
+      </div>
+    </div>
+    <div class="overlay"></div>
+  </section>
 
   <!-- Bootstrap End -->
   {{content_for_layout}}
