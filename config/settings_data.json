@@ -38,6 +38,9 @@
          "about":{
             "type":"about"
          },
+         "featured-home":{
+            "type":"featured-home"
+         },
          "newsletter":{
             "type":"newsletter"
          },
@@ -64,6 +67,7 @@
          "hero",
          "about",
           "newsletter",
+          "featured-home",
          "featured-collections",
          "feature-row",
          "slideshow"
@@ -109,6 +113,9 @@
             "about":{
                "type":"about",
             },
+            "featured-home":{
+               "type":"featured-home"
+            },
             "newsletter":{
                "type":"newsletter",
             },
@@ -135,6 +142,7 @@
             "hero",
             "about",
             "newsletter",
+            "featured-home",
             "featured-collections",
             "feature-row",
             "slideshow"
