@@ -80,9 +80,8 @@
   {{ 'resto.css' | asset_url | stylesheet_tag }}
 
   <!-- javascript -->
-  <script src="{{ 'jquery.min.js' | asset_url }}" defer="defer"></script>
-  <script src="{{ 'owl.carousel.js' | asset_url }}" defer="defer"></script>
-
+  {{ 'jquery.min.js' | asset_url | script_tag }}
+  {{ 'owl.carousel.js' | asset_url | script_tag }}
 
   {{ content_for_header }}
 </head>
