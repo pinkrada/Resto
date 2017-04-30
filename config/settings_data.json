@@ -36,10 +36,10 @@
             }
          },
          "about":{
-            "type":"about",
+            "type":"about"
          },
          "newsletter":{
-            "type":"newsletter",
+            "type":"newsletter"
          },
          "featured-collections":{
             "type":"collection",
