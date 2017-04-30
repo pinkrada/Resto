@@ -273,45 +273,45 @@
 
   <!-- <div class="page-container" id="PageContainer">
 
-    <main class="main-content" id="MainContent" role="main">
-      {{ content_for_layout }}
-    </main> -->
+  <main class="main-content" id="MainContent" role="main">
+  {{ content_for_layout }}
+</main> -->
 
-    {% section 'footer' %}
+{% section 'footer' %}
+{{ '/maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js'}}
 
-    <script src="{{'//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js'}}" defer="defer"></script>
+<!-- Plugin JavaScript -->
+{{ '//cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js'}}
 
-    <!-- Plugin JavaScript -->
-    <script src="{{'//cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js'}}" defer="defer"></script>
+<!-- Theme JavaScript -->
+{{ 'new-age.min.js' | asset_url | script_tag }}
+{{ 'jquery.parallax.min.js' | asset_url | script_tag }}
 
-    <!-- Theme JavaScript -->
-    <script src="{{'new-age.min.js' | asset_url }}" defer="defer"></script>
-    <script src="{{'jquery.parallax.min.js' | asset_url }}" defer="defer"></script>
-    <script type="text/javascript">
-    $('.cta').parallax("-100px", 0.4);
-    $('header').parallax("-100px", 0.1);
-    </script>
-    <script>
+<script type="text/javascript">
+$('.cta').parallax("-100px", 0.4);
+$('header').parallax("-100px", 0.1);
+</script>
+<script>
 
-    $('.owl-carousel').owlCarousel({
-      loop:true,
-      margin:10,
-      dots: false,
-      nav:true,
-      autoplay: true,
-      responsive:{
-        0:{
-          items:1
-        },
-        600:{
-          items:3
-        },
-        1000:{
-          items:3
-        }
-      }
-    });
+$('.owl-carousel').owlCarousel({
+  loop:true,
+  margin:10,
+  dots: false,
+  nav:true,
+  autoplay: true,
+  responsive:{
+    0:{
+      items:1
+    },
+    600:{
+      items:3
+    },
+    1000:{
+      items:3
+    }
+  }
+});
 
-    </script>
+</script>
 </body>
 </html>
