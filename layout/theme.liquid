@@ -1,16 +1,67 @@
-<!DOCTYPE html>
-<html lang="en">
-
+<!doctype html>
+<!--[if IE 9]> <html class="ie9 no-js" lang="{{ shop.locale }}"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html class="no-js" lang="{{ shop.locale }}"> <!--<![endif]-->
 <head>
-
   <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="">
-  <meta name="author" content="">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="{{ settings.color_button }}">
+  <link rel="canonical" href="{{ canonical_url }}">
 
-  <title>Fun Bites</title>
+  {% if settings.favicon != blank %}
+    <link rel="shortcut icon" href="{{ settings.favicon | img_url: '32x32' }}" type="image/png">
+  {% endif %}
 
+  {% capture seo_title %}
+    {{ page_title }}
+    {% if current_tags %}
+      {%- assign meta_tags = current_tags | join: ', ' %} &ndash; {{ 'general.meta.tags' | t: tags: meta_tags -}}
+    {% endif %}
+    {% if current_page != 1 %}
+      &ndash; {{ 'general.meta.page' | t: page: current_page }}
+    {% endif %}
+    {% unless page_title contains shop.name %}
+      &ndash; {{ shop.name }}
+    {% endunless %}
+  {% endcapture %}
+  <title>{{ seo_title }}</title>
+
+  {% if page_description %}
+    <meta name="description" content="{{ page_description | escape }}">
+  {% endif %}
+
+  {% include 'social-meta-tags' %}
+
+  {{ 'theme.scss.css' | asset_url | stylesheet_tag }}
+  {% include 'google-fonts' %}
+
+  <script>
+    var theme = {
+      strings: {
+        addToCart: {{ 'products.product.add_to_cart' | t | json }},
+        soldOut: {{ 'products.product.sold_out' | t | json }},
+        unavailable: {{ 'products.product.unavailable' | t | json }},
+        showMore: {{ 'general.filters.show_more' | t | json }},
+        showLess: {{ 'general.filters.show_less' | t | json }}
+      },
+      moneyFormat: {{ shop.money_format | json }}
+    }
+
+    document.documentElement.className = document.documentElement.className.replace('no-js', 'js');
+  </script>
+
+  <!--[if (lte IE 9) ]>{{ 'match-media.min.js' | asset_url | script_tag }}<![endif]-->
+
+  {% if template.directory == 'customers' %}
+    <!--[if (gt IE 9)|!(IE)]><!--><script src="{{ 'shopify_common.js' | shopify_asset_url }}" defer="defer"></script><!--<![endif]-->
+    <!--[if lte IE 9]><script src="{{ 'shopify_common.js' | shopify_asset_url }}"></script><![endif]-->
+  {% endif %}
+
+  <!--[if (gt IE 9)|!(IE)]><!--><script src="{{ 'vendor.js' | asset_url }}" defer="defer"></script><!--<![endif]-->
+  <!--[if lte IE 9]><script src="{{ 'vendor.js' | asset_url }}"></script><![endif]-->
+
+  <!--[if (gt IE 9)|!(IE)]><!--><script src="{{ 'theme.js' | asset_url }}" defer="defer"></script><!--<![endif]-->
+  <!--[if lte IE 9]><script src="{{ 'theme.js' | asset_url }}"></script><![endif]-->
   <!-- Bootstrap Core CSS -->
   <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
@@ -36,281 +87,224 @@
   <script src="assets/vendors/jquery.min.js"></script>
   <script src="assets/owlcarousel/owl.carousel.js"></script>
 
+  {{ content_for_header }}
 </head>
 
-<body id="page-top" class="home">
+<body class="template-{{ template | split: '.' | first }}">
 
-  <nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
+<!-- Bootstrap -->
+<nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
+      </button>
+      <a class="navbar-brand page-scroll" href="index.html">Fun Bites</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+          <a class="page-scroll" href="#download">Order</a>
+        </li>
+        <li>
+          <a class="page-scroll" href="menu.html">Menu</a>
+        </li>
+        <li>
+          <a class="page-scroll" href="page.html">About</a>
+        </li>
+        <li>
+          <a class="page-scroll" href="#contact">Contact</a>
+        </li>
+      </ul>
+    </div>
+    <!-- /.navbar-collapse -->
+  </div>
+  <!-- /.container-fluid -->
+</nav>
+
+<header>
+  <div class="header-overlay">
     <div class="container">
-      <!-- Brand and toggle get grouped for better mobile display -->
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-          <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
-        </button>
-        <a class="navbar-brand page-scroll" href="index.html">Fun Bites</a>
-      </div>
-
-      <!-- Collect the nav links, forms, and other content for toggling -->
-      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-        <ul class="nav navbar-nav navbar-right">
-          <li>
-            <a class="page-scroll" href="#download">Order</a>
-          </li>
-          <li>
-            <a class="page-scroll" href="menu.html">Menu</a>
-          </li>
-          <li>
-            <a class="page-scroll" href="page.html">About</a>
-          </li>
-          <li>
-            <a class="page-scroll" href="#contact">Contact</a>
-          </li>
-        </ul>
-      </div>
-      <!-- /.navbar-collapse -->
-    </div>
-    <!-- /.container-fluid -->
-  </nav>
-
-  <header>
-    <div class="header-overlay">
-      <div class="container">
-        <div class="row">
-          <div class="col-sm-12">
-            <div class="header-content">
-              <div class="header-content-inner">
-                <!-- <h1>New Age is an app landing page that will help you beautifully showcase your new mobile app, or anything else!</h1> -->
-                <!-- <a href="#download" class="btn btn-outline btn-xl page-scroll">Start Now for Free!</a> -->
-                <h1>Fun <span>Bites</span></h1>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </header>
-
-  <section id="download" class="download bg-primary text-center">
-    <div class="container">
-      <div class="col-md-10 col-md-offset-1 slider">
-        <div class="box">
-          <div class="col-md-7 col-sm-7">
-            <img src="img/1.jpg" class="img-responsive">
-          </div>
-          <div class="col-md-5 col-sm-5">
-            <div class="caption-first">
-              <h3> Modern Filipino Style </h3>
-              <p>Experience menu choices that reveal the character of Philippines, region by region, prepared with only the freshest ingredients by our highly skilled culinary team.</p>
-            </div>
-          </div>
-        </div>
-        <div class="box">
-          <div class="col-md-5 col-sm-5">
-            <div class="caption-first">
-              <h3> Great Service! </h3>
-              <p>It’s not just about first rate cuisine and an award winning wine list. Our highly trained and exceedingly personable staff are there to help you navigate our selections and ensure a memorable dining experience.</p>
-            </div>
-          </div>
-          <div class="col-md-7 col-sm-7">
-            <img src="img/2.jpg" class="img-responsive second-food">
-
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-
-  <section class="cta" id="specialties">
-    <div class="parallax-layer parallax-layer-base">
-      <div class="cta-content ">
-        <div class="container text-center">
-            <h2>Our Menus</h2>
-        </div>
-      </div>
-      <div class="overlay"></div>
-    </div>
-  </section>
-
-  <section id="ourmenu" class="ourmenu bg-primary">
-    <div class="container">
-      <div class="col-md-10 col-md-offset-1 board">
-        <!-- <h3 class="text-center">-Our Menu-</h3> -->
-<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.<br> Lorem ipsum has been the ipsum has been the ipsum has been the</p>
-        <div class="owl-carousel owl-theme">
-          <div class="item">
-            <img src="img/food-1.png" class="img-responsive center-block">
-            <h4>Chicken Wings</h4>
-            <span class="price">P150.00</span>
-            <hr>
-          </div>
-          <div class="item">
-            <img src="img/steak.png" class="img-responsive center-block">
-            <h4>Steak</h4>
-            <span class="price">P150.00</span>
-            <hr>
-          </div>
-          <div class="item">
-            <img src="img/food-3.png" class="img-responsive center-block">
-            <h4>Chicken Wings</h4>
-            <span class="price">P150.00</span>
-            <hr>
-          </div>
-          <div class="item">
-            <img src="img/food-3.png" class="img-responsive center-block">
-            <h4>Chicken Wings</h4>
-            <span class="price">P150.00</span>
-            <hr>
-          </div>
-          <div class="item">
-            <img src="img/food-3.png" class="img-responsive center-block">
-            <h4>Chicken Wings</h4>
-            <span class="price">P150.00</span>
-            <hr>
-          </div>
-          <div class="item">
-            <img src="img/food-3.png" class="img-responsive center-block">
-            <h4>Chicken Wings</h4>
-            <span class="price">P150.00</span>
-            <hr>
-          </div>
-          <div class="item">
-            <img src="img/food-3.png" class="img-responsive center-block">
-            <h4>Chicken Wings</h4>
-            <span class="price">P150.00</span>
-            <hr>
-          </div>
-          <div class="item">
-            <img src="img/food-3.png" class="img-responsive center-block">
-            <h4>Chicken Wings</h4>
-            <span class="price">P150.00</span>
-            <hr>
-          </div>
-          <div class="item">
-            <img src="img/food-3.png" class="img-responsive center-block">
-            <h4>Chicken Wings</h4>
-            <span class="price">P150.00</span>
-            <hr>
-          </div>
-        </div>
-
-        <a id="find-button" href="#about" class="btn btn-outline btn-xl page-scroll sr-button">View Full Menu</a>
-      </div>
-
-    </div>
-  </section>
-
-  <section class="newsletter" id="newsletter">
-    <div class="container ">
       <div class="row">
-        <div class="col-md-12 text-center">
-          <h2 class="section-heading">Stay in touch with updates</h2>
-
-          <form id="register-newsletter">
-            <input type="text" name="newsletter" required="" placeholder="Enter your email address">
-            <input type="submit" class="btn btn-custom-3" value="SIGN UP">
-          </form>
+        <div class="col-sm-12">
+          <div class="header-content">
+            <div class="header-content-inner">
+              <!-- <h1>New Age is an app landing page that will help you beautifully showcase your new mobile app, or anything else!</h1> -->
+              <!-- <a href="#download" class="btn btn-outline btn-xl page-scroll">Start Now for Free!</a> -->
+              <h1>Fun <span>Bites</span></h1>
+            </div>
+          </div>
         </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section id="download" class="download bg-primary text-center">
+  <div class="container">
+    <div class="col-md-10 col-md-offset-1 slider">
+      <div class="box">
+        <div class="col-md-7 col-sm-7">
+          <img src="img/1.jpg" class="img-responsive">
+        </div>
+        <div class="col-md-5 col-sm-5">
+          <div class="caption-first">
+            <h3> Modern Filipino Style </h3>
+            <p>Experience menu choices that reveal the character of Philippines, region by region, prepared with only the freshest ingredients by our highly skilled culinary team.</p>
+          </div>
+        </div>
+      </div>
+      <div class="box">
+        <div class="col-md-5 col-sm-5">
+          <div class="caption-first">
+            <h3> Great Service! </h3>
+            <p>It’s not just about first rate cuisine and an award winning wine list. Our highly trained and exceedingly personable staff are there to help you navigate our selections and ensure a memorable dining experience.</p>
+          </div>
+        </div>
+        <div class="col-md-7 col-sm-7">
+          <img src="img/2.jpg" class="img-responsive second-food">
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
 
 
+<section class="cta" id="specialties">
+  <div class="parallax-layer parallax-layer-base">
+    <div class="cta-content ">
+      <div class="container text-center">
+          <h2>Our Menus</h2>
       </div>
     </div>
     <div class="overlay"></div>
-  </section>
+  </div>
+</section>
 
-  <footer>
-    <div class="container">
-      <div class="col-md-4">
-        <h4>About us</h4>
-        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem ipsum has been the ipsum has been the ipsum has been the</p>
-        <br>
-        <h5><i class="fa fa-clock-o" aria-hidden="true"></i> Opening Hours:</h5>
-        <p>Monday - Friday 8:00 am - 6:00 pm </p>
-        <p>Saturday & Sunday 8:00 am - 8:00 pm </p>
+<section id="ourmenu" class="ourmenu bg-primary">
+  <div class="container">
+    <div class="col-md-10 col-md-offset-1 board">
+      <!-- <h3 class="text-center">-Our Menu-</h3> -->
+<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.<br> Lorem ipsum has been the ipsum has been the ipsum has been the</p>
+      <div class="owl-carousel owl-theme">
+        <div class="item">
+          <img src="img/food-1.png" class="img-responsive center-block">
+          <h4>Chicken Wings</h4>
+          <span class="price">P150.00</span>
+          <hr>
+        </div>
+        <div class="item">
+          <img src="img/steak.png" class="img-responsive center-block">
+          <h4>Steak</h4>
+          <span class="price">P150.00</span>
+          <hr>
+        </div>
+        <div class="item">
+          <img src="img/food-3.png" class="img-responsive center-block">
+          <h4>Chicken Wings</h4>
+          <span class="price">P150.00</span>
+          <hr>
+        </div>
+        <div class="item">
+          <img src="img/food-3.png" class="img-responsive center-block">
+          <h4>Chicken Wings</h4>
+          <span class="price">P150.00</span>
+          <hr>
+        </div>
+        <div class="item">
+          <img src="img/food-3.png" class="img-responsive center-block">
+          <h4>Chicken Wings</h4>
+          <span class="price">P150.00</span>
+          <hr>
+        </div>
+        <div class="item">
+          <img src="img/food-3.png" class="img-responsive center-block">
+          <h4>Chicken Wings</h4>
+          <span class="price">P150.00</span>
+          <hr>
+        </div>
+        <div class="item">
+          <img src="img/food-3.png" class="img-responsive center-block">
+          <h4>Chicken Wings</h4>
+          <span class="price">P150.00</span>
+          <hr>
+        </div>
+        <div class="item">
+          <img src="img/food-3.png" class="img-responsive center-block">
+          <h4>Chicken Wings</h4>
+          <span class="price">P150.00</span>
+          <hr>
+        </div>
+        <div class="item">
+          <img src="img/food-3.png" class="img-responsive center-block">
+          <h4>Chicken Wings</h4>
+          <span class="price">P150.00</span>
+          <hr>
+        </div>
       </div>
-      <div class="col-md-4">
-        <h4>Location</h4>
-        <p><i class="fa fa-location-arrow" aria-hidden="true"></i> Ledesma Extension, Ozamiz City </p>
-        <p><i class="fa fa-phone" aria-hidden="true"></i> +63918-520-8606</p>
-        <p><i class="fa fa-envelope-o" aria-hidden="true"></i> info@pinkrada.com </p>
+
+      <a id="find-button" href="#about" class="btn btn-outline btn-xl page-scroll sr-button">View Full Menu</a>
+    </div>
+
+  </div>
+</section>
+
+<section class="newsletter" id="newsletter">
+  <div class="container ">
+    <div class="row">
+      <div class="col-md-12 text-center">
+        <h2 class="section-heading">Stay in touch with updates</h2>
+
+        <form id="register-newsletter">
+          <input type="text" name="newsletter" required="" placeholder="Enter your email address">
+          <input type="submit" class="btn btn-custom-3" value="SIGN UP">
+        </form>
       </div>
-      <div class="col-md-4 social-media">
-        <h4>Connect With Us!</h4>
-        <i class="fa fa-facebook-square" aria-hidden="true"></i>
-        <i class="fa fa-twitter-square" aria-hidden="true"></i>
-        <i class="fa fa-instagram" aria-hidden="true"></i>
-        <i class="fa fa-pinterest-square" aria-hidden="true"></i>
+
+
+    </div>
+  </div>
+  <div class="overlay"></div>
+</section>
+<!-- Bootstrap End -->
+
+  <a class="in-page-link visually-hidden skip-link" href="#MainContent">{{ 'general.accessibility.skip_to_content' | t }}</a>
+
+  <div id="SearchDrawer" class="search-bar drawer drawer--top">
+    <div class="search-bar__table">
+      <div class="search-bar__table-cell search-bar__form-wrapper">
+        <form class="search search-bar__form" action="/search" method="get" role="search">
+          <button class="search-bar__submit search__submit btn--link" type="submit">
+            {% include 'icon-search' %}
+            <span class="icon__fallback-text">{{ 'general.search.submit' | t }}</span>
+          </button>
+          <input class="search__input search-bar__input" type="search" name="q" value="{{ search.terms | escape }}" placeholder="{{ 'general.search.placeholder' | t }}" aria-label="{{ 'general.search.placeholder' | t }}">
+        </form>
       </div>
-      <div class="col-md-12 copyright">
-        <p>&copy; 2017 Fun Bites. All Rights Reserved.</p>
-        <ul class="list-inline">
-          <li>
-            <a href="#">Privacy</a>
-          </li>
-          <li>
-            <a href="#">Terms</a>
-          </li>
-          <li>
-            <a href="#">FAQ</a>
-          </li>
-        </ul>
+      <div class="search-bar__table-cell text-right">
+        <button type="button" class="btn--link search-bar__close js-drawer-close">
+          {% include 'icon-close' %}
+          <span class="icon__fallback-text">{{ 'general.search.close' | t }}</span>
+        </button>
       </div>
     </div>
-  </footer>
+  </div>
 
+  {% section 'header' %}
 
+  <div class="page-container" id="PageContainer">
 
-  <!-- jQuery -->
-  <!-- <script src="lib/jquery/jquery.min.js"></script> -->
+    <main class="main-content" id="MainContent" role="main">
+      {{ content_for_layout }}
+    </main>
 
-  <!-- Bootstrap Core JavaScript -->
-  <script src="lib/bootstrap/js/bootstrap.min.js"></script>
+    {% section 'footer' %}
 
-  <!-- Plugin JavaScript -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
-
-  <!-- Theme JavaScript -->
-  <script src="js/new-age.min.js"></script>
-<script src="js/jquery.parallax.min.js"></script>
-<script type="text/javascript">
-$('.cta').parallax("-100px", 0.4);
-$('header').parallax("-100px", 0.1);
-// $('.newsletter').parallax("-100px", 0.4);
-      // // $('.front-banner').each(function(index, element) {
-      // //     $(this).addClass('fixed');
-      // // });
-      //
-      // $('#request-now').parallax("100%", 0.4); // Counter
-      // $('#request-now').each(function(index, element) {
-      //     $(this).addClass('fixed');
-      // });
-
-
-</script>
-<script>
-
-  $('.owl-carousel').owlCarousel({
-    loop:true,
-    margin:10,
-    dots: false,
-    nav:true,
-    autoplay: true,
-    responsive:{
-      0:{
-        items:1
-      },
-      600:{
-        items:3
-      },
-      1000:{
-        items:3
-      }
-    }
-  });
-
-</script>
-
+  </div>
 </body>
-
 </html>
