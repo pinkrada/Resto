@@ -39,7 +39,7 @@
             "type":"about",
          },
          "newsletter":{
-            "type":"text",
+            "type":"newsletter",
          },
          "featured-collections":{
             "type":"collection",
@@ -107,10 +107,10 @@
                }
             },
             "about":{
-               "type":"text",
+               "type":"about",
             },
             "newsletter":{
-               "type":"text",
+               "type":"newsletter",
             },
             "featured-collections":{
                "type":"collection",
