@@ -30,42 +30,8 @@
   <meta name="description" content="{{ page_description | escape }}">
   {% endif %}
 
-  {% include 'social-meta-tags' %}
-<!--
-  {{ 'theme.scss.css' | asset_url | stylesheet_tag }}
-  {% include 'google-fonts' %}
+  <!-- {% include 'social-meta-tags' %} -->
 
-  <script>
-  var theme = {
-    strings: {
-      addToCart: {{ 'products.product.add_to_cart' | t | json }},
-      soldOut: {{ 'products.product.sold_out' | t | json }},
-      unavailable: {{ 'products.product.unavailable' | t | json }},
-      showMore: {{ 'general.filters.show_more' | t | json }},
-      showLess: {{ 'general.filters.show_less' | t | json }}
-    },
-    moneyFormat: {{ shop.money_format | json }}
-  }
-
-  document.documentElement.className = document.documentElement.className.replace('no-js', 'js');
-  </script>
-
-  <!--[if (lte IE 9) ]>{{ 'match-media.min.js' | asset_url | script_tag }}<![endif]-->
-
-  {% if template.directory == 'customers' %}
-  <!--[if (gt IE 9)|!(IE)]><!--><script src="{{ 'shopify_common.js' | shopify_asset_url }}" defer="defer"></script><!--<![endif]-->
-  <!--[if lte IE 9]><script src="{{ 'shopify_common.js' | shopify_asset_url }}"></script><![endif]-->
-  {% endif %}
-
-  <!--[if (gt IE 9)|!(IE)]><!--><script src="{{ 'vendor.js' | asset_url }}" defer="defer"></script><!--<![endif]-->
-  <!--[if lte IE 9]><script src="{{ 'vendor.js' | asset_url }}"></script><![endif]-->
-
-  <!--[if (gt IE 9)|!(IE)]><!--><script src="{{ 'theme.js' | asset_url }}" defer="defer"></script><!--<![endif]-->
-  <!--[if lte IE 9]><script src="{{ 'theme.js' | asset_url }}"></script><![endif]-->
-  <!-- Bootstrap Core CSS --> -->
-  {{ '//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css' | stylesheet_tag }}
-
-  <!-- Custom Fonts -->
   {{ '//fonts.googleapis.com/css?family=Lato:100,300,400,700,400italic,700italic' | stylesheet_tag }}
   {{ '//fonts.googleapis.com/css?family=Dancing+Script:400,700' | stylesheet_tag }}
 
