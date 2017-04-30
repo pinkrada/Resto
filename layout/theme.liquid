@@ -32,37 +32,6 @@
 
   {% include 'social-meta-tags' %}
 
-  {{ 'theme.scss.css' | asset_url | stylesheet_tag }}
-  {% include 'google-fonts' %}
-
-  <script>
-  var theme = {
-    strings: {
-      addToCart: {{ 'products.product.add_to_cart' | t | json }},
-      soldOut: {{ 'products.product.sold_out' | t | json }},
-      unavailable: {{ 'products.product.unavailable' | t | json }},
-      showMore: {{ 'general.filters.show_more' | t | json }},
-      showLess: {{ 'general.filters.show_less' | t | json }}
-    },
-    moneyFormat: {{ shop.money_format | json }}
-  }
-
-  document.documentElement.className = document.documentElement.className.replace('no-js', 'js');
-  </script>
-
-  <!--[if (lte IE 9) ]>{{ 'match-media.min.js' | asset_url | script_tag }}<![endif]-->
-
-  {% if template.directory == 'customers' %}
-  <!--[if (gt IE 9)|!(IE)]><!--><script src="{{ 'shopify_common.js' | shopify_asset_url }}" defer="defer"></script><!--<![endif]-->
-  <!--[if lte IE 9]><script src="{{ 'shopify_common.js' | shopify_asset_url }}"></script><![endif]-->
-  {% endif %}
-
-  <!--[if (gt IE 9)|!(IE)]><!--><script src="{{ 'vendor.js' | asset_url }}" defer="defer"></script><!--<![endif]-->
-  <!--[if lte IE 9]><script src="{{ 'vendor.js' | asset_url }}"></script><![endif]-->
-
-  <!--[if (gt IE 9)|!(IE)]><!--><script src="{{ 'theme.js' | asset_url }}" defer="defer"></script><!--<![endif]-->
-  <!--[if lte IE 9]><script src="{{ 'theme.js' | asset_url }}"></script><![endif]-->
-  <!-- Bootstrap Core CSS -->
   {{ '//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css' | stylesheet_tag }}
 
   <!-- Custom Fonts -->
@@ -195,7 +164,6 @@
             <hr>
           </div>
           <div class="item">
-            <img src="img/steak.png" class="img-responsive center-block">
             <img src="{{ 'steak.png' | asset_url }}" alt="{{ shop.name }}" class="img-responsive center-block">
             <h4>Steak</h4>
             <span class="price">P150.00</span>
@@ -314,7 +282,5 @@
     });
 
     </script>
-
-  </div>
 </body>
 </html>
