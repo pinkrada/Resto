@@ -111,13 +111,13 @@
                }
             },
             "about":{
-               "type":"about",
+               "type":"about"
             },
             "featured-home":{
                "type":"featured-home"
             },
             "newsletter":{
-               "type":"newsletter",
+               "type":"newsletter"
             },
             "featured-collections":{
                "type":"collection",
