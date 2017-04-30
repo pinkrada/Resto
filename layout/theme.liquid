@@ -73,56 +73,7 @@ document.documentElement.className = document.documentElement.className.replace(
 
 <body class="template-{{ template | split: '.' | first }} home">
 
-  <!-- Bootstrap -->
-  <nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
-    <div class="container">
-      <!-- Brand and toggle get grouped for better mobile display -->
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-          <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
-        </button>
-        <a class="navbar-brand page-scroll" href="index.html">Fun Bites</a>
-      </div>
-
-      <!-- Collect the nav links, forms, and other content for toggling -->
-      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-        <ul class="nav navbar-nav navbar-right">
-          <li>
-            <a class="page-scroll" href="#download">Order</a>
-          </li>
-          <li>
-            <a class="page-scroll" href="menu.html">Menu</a>
-          </li>
-          <li>
-            <a class="page-scroll" href="page.html">About</a>
-          </li>
-          <li>
-            <a class="page-scroll" href="#contact">Contact</a>
-          </li>
-        </ul>
-      </div>
-      <!-- /.navbar-collapse -->
-    </div>
-    <!-- /.container-fluid -->
-  </nav>
-
-  <header>
-    <div class="header-overlay">
-      <div class="container">
-        <div class="row">
-          <div class="col-sm-12">
-            <div class="header-content">
-              <div class="header-content-inner">
-                <!-- <h1>New Age is an app landing page that will help you beautifully showcase your new mobile app, or anything else!</h1> -->
-                <!-- <a href="#download" class="btn btn-outline btn-xl page-scroll">Start Now for Free!</a> -->
-                <h1>Fun <span>Bites</span></h1>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </header>
+{% section 'header' %}
 
   <section id="download" class="download bg-primary text-center">
     <div class="container">
@@ -166,93 +117,9 @@ document.documentElement.className = document.documentElement.className.replace(
     </div>
   </section>
 
-  <section id="ourmenu" class="ourmenu bg-primary">
-    <div class="container">
-      <div class="col-md-10 col-md-offset-1 board">
-        <!-- <h3 class="text-center">-Our Menu-</h3> -->
-        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.<br> Lorem ipsum has been the ipsum has been the ipsum has been the</p>
-        <div class="owl-carousel owl-theme">
-          <div class="item">
-            <img src="{{ 'food-3.png' | asset_url }}" alt="{{ shop.name }}" class="img-responsive center-block">
-            <h4>Chicken Wings</h4>
-            <span class="price">P150.00</span>
-            <hr>
-          </div>
-          <div class="item">
+  
 
-            <img src="{{ 'steak.png' | asset_url }}" alt="{{ shop.name }}" class="img-responsive center-block">
-            <h4>Steak</h4>
-            <span class="price">P150.00</span>
-            <hr>
-          </div>
-          <div class="item">
-            <img src="{{ 'food-3.png' | asset_url }}" alt="{{ shop.name }}" class="img-responsive center-block">
-            <h4>Chicken Wings</h4>
-            <span class="price">P150.00</span>
-            <hr>
-          </div>
-          <div class="item">
-            <img src="{{ 'food-3.png' | asset_url }}" alt="{{ shop.name }}" class="img-responsive center-block">
-            <h4>Chicken Wings</h4>
-            <span class="price">P150.00</span>
-            <hr>
-          </div>
-          <div class="item">
-            <img src="{{ 'food-3.png' | asset_url }}" alt="{{ shop.name }}" class="img-responsive center-block">
-            <h4>Chicken Wings</h4>
-            <span class="price">P150.00</span>
-            <hr>
-          </div>
-          <div class="item">
-            <img src="{{ 'food-1.png' | asset_url }}" alt="{{ shop.name }}" class="img-responsive center-block">
-            <h4>Chicken Wings</h4>
-            <span class="price">P150.00</span>
-            <hr>
-          </div>
-          <div class="item">
-            <img src="{{ 'food-3.png' | asset_url }}" alt="{{ shop.name }}" class="img-responsive center-block">
-            <h4>Chicken Wings</h4>
-            <span class="price">P150.00</span>
-            <hr>
-          </div>
-          <div class="item">
-            <img src="{{ 'food-3.png' | asset_url }}" alt="{{ shop.name }}" class="img-responsive center-block">
-            <h4>Chicken Wings</h4>
-            <span class="price">P150.00</span>
-            <hr>
-          </div>
-          <div class="item">
-            <img src="{{ 'food-1.png' | asset_url }}" alt="{{ shop.name }}" class="img-responsive center-block">
-            <h4>Chicken Wings</h4>
-            <span class="price">P150.00</span>
-            <hr>
-          </div>
-        </div>
-
-        <a id="find-button" href="#about" class="btn btn-outline btn-xl page-scroll sr-button">View Full Menu</a>
-      </div>
-
-    </div>
-  </section>
-
-  <section class="newsletter" id="newsletter">
-    <div class="container ">
-      <div class="row">
-        <div class="col-md-12 text-center">
-          <h2 class="section-heading">Stay in touch with updates</h2>
-
-          <form id="register-newsletter">
-            <input type="text" name="newsletter" required="" placeholder="Enter your email address">
-            <input type="submit" class="btn btn-custom-3" value="SIGN UP">
-          </form>
-        </div>
-
-
-      </div>
-    </div>
-    <div class="overlay"></div>
-  </section>
-  {% section 'header' %}
+  {% section 'newsletter' %}
   <!-- Bootstrap End -->
   {{content_for_layout}}
   {% section 'footer' %}
