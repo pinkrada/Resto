@@ -166,7 +166,7 @@ header {
   position: relative;
   background-repeat: no-repeat;
   background-attachment: fixed;
-background-size: cover;
+  background-size: cover;
   width: 100%;
   min-height: auto;
   overflow-y: hidden;
@@ -189,8 +189,8 @@ header h1{
   color: white;
 }
 header.inner-pages .header-content .header-content-inner {
-    top: 194px;
-    text-align: left;
+  top: 194px;
+  text-align: left;
 }
 header .header-overlay{
   overflow-x: hidden;
@@ -408,10 +408,10 @@ section.cta .cta-content h2 {
   display: inline;
 }
 /*section.ourmenu{
-  background-image: url(../pepper.png);
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: 0% 50%;
+background-image: url(../pepper.png);
+background-size: cover;
+background-repeat: no-repeat;
+background-position: 0% 50%;
 }*/
 .ourmenu img{
   max-width: 200px;
@@ -428,14 +428,14 @@ section.cta .cta-content h2 {
   background: rgba(214, 214, 214, 0.18);
 }
 #newsletter input[type=text] {
-height: 46px;
-width: 300px;
-vertical-align: top;
-border-radius: 0;
-background: #CFCECE;
-line-height: 20px;
-padding: 5px 10px 5px 20px;
-color: #727b7c;
+  height: 46px;
+  width: 300px;
+  vertical-align: top;
+  border-radius: 0;
+  background: #CFCECE;
+  line-height: 20px;
+  padding: 5px 10px 5px 20px;
+  color: #727b7c;
 }
 
 #newsletter .btn {
@@ -719,6 +719,10 @@ body {
   background-color: #fff;
   padding:100px;
 }
+.cart__footer {
+  background-color: white;
+  color: #323538;
+}
 
 /* Media Query */
 @media(max-width: 1200px){
@@ -734,22 +738,22 @@ body {
 }
 @media(max-width: 992px){
   /*.caption-first{
-    margin-top: -4px;
-    height: 218px;
-  }
-  .caption-first h3 {
-    padding-top: 45px;
-  }*/
-  .caption-first {
-    height: 269px;
-  }
-  .caption-first h3 {
-    padding-top: 30px;
-    font-size: 31px;
-  }
-  .download {
-    height: 308px;
-  }
+  margin-top: -4px;
+  height: 218px;
+}
+.caption-first h3 {
+padding-top: 45px;
+}*/
+.caption-first {
+  height: 269px;
+}
+.caption-first h3 {
+  padding-top: 30px;
+  font-size: 31px;
+}
+.download {
+  height: 308px;
+}
 }
 @media(max-width: 768px){
   .download{
