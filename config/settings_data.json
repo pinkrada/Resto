@@ -41,7 +41,7 @@
       "featured-collections":{
         "type":"collection",
         "settings":{
-          "collection":"frontpage"
+          "collection":"main-menu"
         }
       },
       "featured-home":{
@@ -108,7 +108,7 @@
         "featured-collections":{
           "type":"collection",
           "settings":{
-            "collection":"frontpage"
+            "collection":"main-menu"
           }
         },
         "featured-home":{
