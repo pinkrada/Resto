@@ -711,6 +711,9 @@ body {
   webkit-tap-highlight-color: #222222;
 }
 
+.template-product footer h4{
+  margin-top: 48px;
+}
 .product-template-page{
   background-color: #fff;
   padding:100px;
