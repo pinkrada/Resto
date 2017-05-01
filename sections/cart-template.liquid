@@ -1,9 +1,26 @@
+<header class="inner-pages">
+  <div class="header-overlay">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="header-content">
+            <div class="header-content-inner">
+              <!-- <h1>New Age is an app landing page that will help you beautifully showcase your new mobile app, or anything else!</h1> -->
+              <!-- <a href="#download" class="btn btn-outline btn-xl page-scroll">Start Now for Free!</a> -->
+              <h1>{{ 'cart.general.title' | t }}</h1>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
 <div class="page-width" data-section-id="{{ section.id }}" data-section-type="cart-template">
 
   {% if cart.item_count > 0 %}
-    <div class="section-header text-center">
+    <!-- <div class="section-header text-center">
       <h1>{{ 'cart.general.title' | t }}</h1>
-    </div>
+    </div> -->
 
     <form action="/cart" method="post" novalidate class="cart">
       <table>
