@@ -71,8 +71,24 @@
           <hr>
         </div>
       </div>
+      {%- assign collection = collections[main-menu] -%}
 
-      <a id="find-button" href="#about" class="btn btn-outline btn-xl page-scroll sr-button">View Full Menu</a>
+      {% case 3 %}
+        {% when '2' %}
+          {%- assign grid_item_width = 'medium-up--one-half' -%}
+          {%- assign image_size = '530x530' -%}
+        {% when '3' %}
+          {%- assign grid_item_width = 'small--one-half medium-up--one-third' -%}
+          {%- assign image_size = '345x345' -%}
+        {% when '4' %}
+          {%- assign grid_item_width = 'small--one-half medium-up--one-quarter' -%}
+          {%- assign image_size = '250x250' -%}
+        {% when '5' %}
+          {%- assign grid_item_width = 'small--one-half medium-up--one-fifth' -%}
+          {%- assign image_size = '195x195' -%}
+      {% endcase %}
+
+      {%- assign product_limit = 3 -%}
 
       <div class="grid grid--uniform grid--view-items">
         {% for product in collection.products limit: product_limit %}
@@ -99,6 +115,10 @@
           {% endfor %}
         {% endfor %}
       </div>
+
+      <a id="find-button" href="#about" class="btn btn-outline btn-xl page-scroll sr-button">View Full Menu</a>
+
+
     </div>
 
   </div>
