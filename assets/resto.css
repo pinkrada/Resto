@@ -278,6 +278,7 @@ header .device-container .screen img {
 }
 .inner-box{
   background-color: #f3f3f3;
+  position:absolute;
   width: 100%;
   margin-top: 50px;
   padding: 5px 30px;
