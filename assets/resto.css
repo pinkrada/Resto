@@ -548,6 +548,7 @@ section.cta .cta-content h2 {
   color: white;
   max-width: 450px;
   font-size: 64px;
+  text-transform: capitalize;
 }
 section.cta .overlay {
   height: 100%;
