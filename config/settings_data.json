@@ -62,7 +62,7 @@
       "about",
       "newsletter",
       "featured-home",
-      "featured-collection"
+      "featured-collections"
     ]
   },
   "presets":{
@@ -130,7 +130,7 @@
         "about",
         "newsletter",
         "featured-home",
-        "featured-collection"
+        "featured-collections"
       ]
     }
   }
