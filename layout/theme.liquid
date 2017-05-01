@@ -77,9 +77,9 @@
   <!-- Bootstrap End -->
   {{content_for_layout}}
 
-
-  {% section 'footer' %}
-
+  <footer>
+    {% section 'footer' %}
+  </footer>
   <!-- javascript -->
   {{ 'jquery.min.js' | asset_url | script_tag }}
   {{ 'owl.carousel.js' | asset_url | script_tag }}
