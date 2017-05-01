@@ -290,6 +290,7 @@ header .device-container .screen img {
 .inner-box h2{
   font-family: 'Dancing Script', cursive;
   color: #955504;
+  text-transform: capitalize;
 }
 .inner-box p{
   font-size: 16px;
