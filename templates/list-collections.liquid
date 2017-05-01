@@ -19,7 +19,7 @@
 <section class="inner-page-section">
   <div class="container">
     <div class="col-md-5">
-      <img src="img/wings.jpg" >
+      <img src="{{ 'wings.jpg' | asset_url }}" alt="{{ shop.name }}">
     </div>
     <div class="col-md-7">
       <div class="inner-box">
@@ -46,7 +46,7 @@
       </div>
     </div>
     <div class="col-md-5">
-      <img src="img/fries.jpeg" style="float:right">
+      <img src="{{ 'fries.jpeg' | asset_url }}" alt="{{ shop.name }}" style="float:right;">
     </div>
 
   </div>
