@@ -71,7 +71,7 @@
           <hr>
         </div>
       </div>
-      {%- assign collection = collections[main-menu] -%}
+      {%- assign collection = collections['main-menu'].products -%}
 
       {% case 3 %}
         {% when '2' %}
@@ -91,7 +91,7 @@
       {%- assign product_limit = 3 -%}
 
       <div class="grid grid--uniform grid--view-items">
-        {% for product in collection.products limit: product_limit %}
+        {% for product in collections['main-menu'].products limit: product_limit %}
           <div class="grid__item grid__item--{{section.id}} {{ grid_item_width }}">
             {% include 'product-card-grid', grid_image_width: image_size %}
           </div>
