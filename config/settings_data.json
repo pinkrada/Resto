@@ -38,6 +38,12 @@
       "about":{
         "type":"about"
       },
+      "featured-collections":{
+        "type":"collection",
+        "settings":{
+          "collection":"frontpage"
+        }
+      },
       "featured-home":{
         "type":"featured-home"
       },
@@ -56,6 +62,7 @@
       "about",
       "newsletter",
       "featured-home"
+      "featured-collection"
     ]
   },
   "presets":{
@@ -98,6 +105,12 @@
         "about":{
           "type":"about"
         },
+        "featured-collections":{
+          "type":"collection",
+          "settings":{
+            "collection":"frontpage"
+          }
+        },
         "featured-home":{
           "type":"featured-home"
         },
@@ -117,6 +130,7 @@
         "about",
         "newsletter",
         "featured-home"
+        "featured-collection"
       ]
     }
   }
