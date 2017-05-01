@@ -61,7 +61,7 @@
       "hero",
       "about",
       "newsletter",
-      "featured-home"
+      "featured-home",
       "featured-collection"
     ]
   },
@@ -129,7 +129,7 @@
         "hero",
         "about",
         "newsletter",
-        "featured-home"
+        "featured-home",
         "featured-collection"
       ]
     }
