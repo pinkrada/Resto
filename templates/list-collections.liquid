@@ -26,7 +26,7 @@
         <h2>Our Main</h2>
         {% if collections['main-menu'].products.size > 0 %}
         {% for product in collections['main-menu'].products %}
-          <a class="shop-now" href="{{ product.url }}"><p>{{ product.title | escape  }} - - - <span>{{ product.price }}</span></p></a>
+          <a class="shop-now" href="{{ product.url }}"><p>{{ product.title | escape  }} - - - <span>{{ product.price | money }}</span></p></a>
         {% endfor %}
 
         {% endif %}
