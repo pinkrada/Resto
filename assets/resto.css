@@ -293,6 +293,9 @@ header .device-container .screen img {
 }
 .inner-box p{
   font-size: 16px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding-bottom: 9px;
 }
 section h2 {
   font-size: 50px;
