@@ -711,6 +711,10 @@ body {
   webkit-tap-highlight-color: #222222;
 }
 
+.product-template-page{
+  background-color:#fff;
+}
+
 /* Media Query */
 @media(max-width: 1200px){
   .caption-first {
