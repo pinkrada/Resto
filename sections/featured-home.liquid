@@ -14,77 +14,21 @@
       <!-- <h3 class="text-center">-Our Menu-</h3> -->
       <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.<br> Lorem ipsum has been the ipsum has been the ipsum has been the</p>
       <div class="owl-carousel owl-theme">
+        {% if collections['main-menu'].products.size > 0 %}
 
+        {% for product in collections['main-menu'].products %}
         <div class="item">
-          <img src="{{ 'food-3.png' | asset_url }}" alt="{{ shop.name }}" class="img-responsive center-block">
-          <h4>Chicken Wings</h4>
+          <img src="{{ product.featured_image | product_img_url: 'medium' }}" alt="{{ product.title | escape  }}" />
+          <a class="shop-now" href="{{ product.url }}"><h4>{{ product.title | escape  }}</h4></a>
           <span class="price">P150.00</span>
           <hr>
         </div>
-        <div class="item">
+        {% endfor %}
 
-          <img src="{{ 'steak.png' | asset_url }}" alt="{{ shop.name }}" class="img-responsive center-block">
-          <h4>Steak</h4>
-          <span class="price">P150.00</span>
-          <hr>
-        </div>
-        <div class="item">
-          <img src="{{ 'food-3.png' | asset_url }}" alt="{{ shop.name }}" class="img-responsive center-block">
-          <h4>Chicken Wings</h4>
-          <span class="price">P150.00</span>
-          <hr>
-        </div>
-        <div class="item">
-          <img src="{{ 'food-3.png' | asset_url }}" alt="{{ shop.name }}" class="img-responsive center-block">
-          <h4>Chicken Wings</h4>
-          <span class="price">P150.00</span>
-          <hr>
-        </div>
-        <div class="item">
-          <img src="{{ 'food-3.png' | asset_url }}" alt="{{ shop.name }}" class="img-responsive center-block">
-          <h4>Chicken Wings</h4>
-          <span class="price">P150.00</span>
-          <hr>
-        </div>
-        <div class="item">
-          <img src="{{ 'food-1.png' | asset_url }}" alt="{{ shop.name }}" class="img-responsive center-block">
-          <h4>Chicken Wings</h4>
-          <span class="price">P150.00</span>
-          <hr>
-        </div>
-        <div class="item">
-          <img src="{{ 'food-3.png' | asset_url }}" alt="{{ shop.name }}" class="img-responsive center-block">
-          <h4>Chicken Wings</h4>
-          <span class="price">P150.00</span>
-          <hr>
-        </div>
-        <div class="item">
-          <img src="{{ 'food-3.png' | asset_url }}" alt="{{ shop.name }}" class="img-responsive center-block">
-          <h4>Chicken Wings</h4>
-          <span class="price">P150.00</span>
-          <hr>
-        </div>
-        <div class="item">
-          <img src="{{ 'food-1.png' | asset_url }}" alt="{{ shop.name }}" class="img-responsive center-block">
-          <h4>Chicken Wings</h4>
-          <span class="price">P150.00</span>
-          <hr>
-        </div>
+        {% endif %}
       </div>
-      {% if collections['main-menu'].products.size > 0 %}
 
-{% for product in collections['main-menu'].products %}
-
-  <li>
-  <img src="{{ product.featured_image | product_img_url: 'medium' }}" alt="{{ product.title | escape  }}" />
-  <a class="shop-now" href="{{ product.url }}">{{ product.title | escape  }}</a>
-  </li>
-
-{% endfor %}
-
-{% endif %}
-      <a id="find-button" href="#about" class="btn btn-outline btn-xl page-scroll sr-button">View Full Menu</a>
-
+      <a id="find-button" href="#about" class="btn btn-outline btn-xl page-scroll sr-button">View Full Menu</a>  
 
     </div>
 
